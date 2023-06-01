@@ -1,4 +1,4 @@
-const Assinante = require("..");
+const Assinante = require("../assinante");
 
 const AssinantesCriar = async (request, response) => {
   try {

@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 
+const Routes = require("./routes");
+
 // Conectar ao banco de dados MongoDB
 mongoose
-  .connect("mongodb://localhost/assinantes", {
+  .connect("mongodb://127.0.0.1:27017/gerenciador-de-assinantes", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -16,28 +18,10 @@ mongoose
     console.error("Erro ao conectar ao banco de dados:", err);
   });
 
-// Definir o esquema do Assinante
-const assinanteSchema = new mongoose.Schema({
-  codigo: String,
-  nome: String,
-  sobrenome: String,
-  dataNascimento: Date,
-  telefone: String,
-  endereco: String,
-  cidade: String,
-  estado: String,
-  status: { type: String, enum: ["Ativo", "Inativo"] },
-  fotoPerfil: Buffer,
-});
-
-// Definir o modelo do Assinante
-const Assinante = mongoose.model("Assinante", assinanteSchema);
-
 app.use(express.json());
+app.use("/", Routes);
 
 // Iniciar o servidor
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
-
-module.exports = Assinante

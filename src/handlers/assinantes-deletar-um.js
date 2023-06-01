@@ -1,4 +1,4 @@
-const Assinante = require("..");
+const Assinante = require("../assinante");
 
 const AssinantesDeletarUm = async (request, response) => {
   try {

@@ -1,4 +1,4 @@
-const Assinante = require("..");
+const Assinante = require("../assinante");
 
 const AssinantesEditar = async (request, response) => {
     try {
@@ -39,7 +39,7 @@ const AssinantesEditar = async (request, response) => {
     
         // Salvar as alterações no banco de dados
         await assinante.save();
-        return res
+        return response
           .status(200)
           .json({ message: "Assinante atualizado com sucesso." });
       } catch (error) {
