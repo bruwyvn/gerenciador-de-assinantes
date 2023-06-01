@@ -112,9 +112,7 @@ Obtém um único assinante com base no código fornecido.
 
 Obtém uma lista de assinantes com base nos critérios de busca fornecidos.
 
-**Endpoint:** `GET /assinantes/busca?nome=...
-
-&sobrenome=...&cidade=...&estado=...&status=...`
+**Endpoint:** `GET /assinantes/busca?nome=...&sobrenome=...&cidade=...&estado=...&status=...`
 
 ### Exclusão de Assinante
 
